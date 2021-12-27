@@ -3,12 +3,21 @@
 @section('title', 'Football Match')
 
 @section('content')
-    <div class="content">
-        <div class="title m-b-md">
-            <h1>マイページ</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1>マイページ</h1>
+                <div class="form-group row">
+                    <form action="{{ url('user/mypage/apply_create') }}" method="get">
+                        <input type="submit" class="btn btn-primary" value="募集投稿を作成する">
+                    </form>
+                </div>
+                <div class="form-group row">
+                    <form action="{{ url('user/mypage/list') }}" method="get">
+                        <input type="submit" class="btn btn-primary" value="私の募集投稿一覧">
+                    </form>
+                </div>
+            </div>
         </div>
-        <ul>
-            <li><a href=" {{ url('/user/mypage/apply_create') }}">応募投稿作成</a></li>
-        </ul>
     </div>
 @endsection

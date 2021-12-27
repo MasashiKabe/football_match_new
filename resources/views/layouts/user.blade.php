@@ -40,15 +40,17 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('user/team/regist') }}">チーム新規登録</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('user/matching/search_apply') }}">対戦チームを探す</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    マッチング
+                                    試合承認
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ url('user/matching/search_apply') }}">試合依頼</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('user/approval/list') }}">試合承認</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('user/approval/list') }}">承認を行う</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="{{ url('user/matching/list') }}">マッチング一覧</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('user/matching/list') }}">マッチング状態</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -62,6 +64,7 @@
                         </a>
                         <form id='logout-form' action={{ route('logout') }} method="POST" style="display: none;">
                             @csrf
+                        </form>
                         </ul>
                     </div>
                 </div>

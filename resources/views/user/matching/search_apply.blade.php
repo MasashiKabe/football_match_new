@@ -3,35 +3,43 @@
 @section('title', 'Football Match')
 
 @section('content')
-    <div class="content">
-        <div class="title m-b-md">
-            <h1>他チーム応募検索</h1>
-        </div>
-        <div>
-            <h2>条件を指定して検索する</h2>
-            <button>検索</button>
-        </div>
-        <div>
-            <h1>応募投稿</h1>
-            <h3>Aチーム</h3>
-            <div>
-                xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1>対戦チームを探す</h1>
+                <div class="form-group row">
+                    <h2>条件を指定して検索する</h2>
+                    <form action="{{ url('user/matching/apply_list') }}" method="get">
+                        <input type="submit" class="btn btn-primary" value="検索">
+                    </form>
+                </div>
+                <h1>応募投稿</h1>
+                <div class="form-group row">
+                    <table class="table">
+                        <td>Aチーム</td><td>xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！</td>
+                    </table>
+                    <form action="" method="get">
+                        <input type="submit" class="btn btn-primary" value="応募詳細へ">
+                    </form>
+                </div>
+                <div>
+                <div class="form-group row">
+                    <table class="table">
+                        <td>Bチーム</td><td>xx月xx日(x)xx:xx～xx:xx　千葉県　募集中です。</td>
+                    </table>
+                    <form action="" method="get">
+                        <input type="submit" class="btn btn-primary" value="応募詳細へ">
+                    </form>
+                </div>
+                <div class="form-group row">
+                    <table class="table">
+                        <td>Cチーム</td><td>xx月xx日(x)xx:xx～xx:xx　静岡県　募集中しています。</td>
+                    </table>
+                    <form action="" method="get">
+                        <input type="submit" class="btn btn-primary" value="応募詳細へ">
+                    </form>
+                </div>
             </div>
-            <a href="">応募詳細へ</a>
-        </div>
-        <div>
-            <h3>Bチーム</h3>
-            <div>
-                xx月xx日(x)xx:xx～xx:xx　千葉県　募集中です。
-            </div>
-            <a href="">応募詳細へ</a>
-        </div>
-        <div>
-            <h3>Cチーム</h3>
-            <div>
-                xx月xx日(x)xx:xx～xx:xx　静岡県　募集中しています。
-            </div>
-            <a href="">応募詳細へ</a>
         </div>
     </div>
 @endsection

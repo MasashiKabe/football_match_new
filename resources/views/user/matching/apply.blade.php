@@ -3,28 +3,30 @@
 @section('title', 'Football Match')
 
 @section('content')
-    <div class="content">
-        <div class="title m-b-md">
-            <h1>応募画面</h1>
-        </div>
-        <form action="" method="post">
-            <div>
-                <h3>応募投稿</h3>
-                <div>
-                    応募チーム：Aチーム
-                </div>
-                <div>
-                    xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！
-                </div>
-                <h3>応募依頼コメント</h3>
-                <div>
-                    <label for="comment">コメント</label>
-                    <textarea name="comment" cols="30" rows="20"></textarea>
-                </div>
-                <div>
-                    <input type="submit" value="応募する">
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1>応募画面</h1>
+                <form action="{{ action('User\MatchingController@apply_now') }}" method="post">
+                    <div class="form-group row">
+                        <h3>応募投稿内容</h3>
+                        <table class="table">
+                            <td>応募チーム</td>
+                            <td>Aチーム</td>
+                            <td>xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！</td>
+                        </table>
+                    </div>
+                    <h3>応募依頼コメント</h3>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="comment">コメント</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="comment" cols="20" rows="10"></textarea>
+                        </div>
+                    </div>
+                    {{ csrf_field() }}
+                    <input type="submit" class="btn btn-primary" value="投稿する">
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 @endsection

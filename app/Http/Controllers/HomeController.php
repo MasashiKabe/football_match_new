@@ -25,7 +25,7 @@ class HomeController extends Controller
      //「トップページ」一般ユーザーの閲覧画面
     public function index()
     {
-        return view('welcome');
+        return view('index');
     }
 
     public function search()

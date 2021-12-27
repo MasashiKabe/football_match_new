@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- layouts/ordinary.blade.phpを読み込む -->
+@extends('layouts.ordinary')
+@section('title', 'Football Match')
 
-        <title>Football Match</title>
-    </head>
-    <body>
-        <div class="content">
-            <div class="title m-b-md">
+@section('content')
+@section('content')
+    <div class="container">
+        <div class="row"></div>
+            <div class="col-md-8 mx-auto">
                 <h1>応募詳細</h1>
-            </div>
-            <div>
-                <h3>Fチーム</h3>
-                <div>
-                    xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！
+                <div class="form-group row">
+                    <table class="table">
+                        <td>
+                        xx月xx日(x)xx:xx～xx:xx　神奈川県　ユニはxx色です。
+                        チーム設立がまだ浅いので背中をお借りできれば嬉しいです！
+                        宜しくお願い致します。
+                        </td>
+                     </table>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+@endsection

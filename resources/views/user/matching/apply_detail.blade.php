@@ -3,16 +3,18 @@
 @section('title', 'Football Match')
 
 @section('content')
-    <div class="content">
-        <div class="title m-b-md">
-            <h1>応募詳細</h1>
-        </div>
-        <div>
-            <h3>Fチーム</h3>
-            <div>
-                xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h1>応募詳細</h1>
+                <div>
+                    <h3>Fチーム</h3>
+                    xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！
+                    <form action="{{ url('user/matching/apply') }}" method="get">
+                        <input type="submit" class="btn btn-primary" value="応募する">
+                    </form>
+                </div>
             </div>
-            <a href="">応募する</a>
         </div>
     </div>
 @endsection

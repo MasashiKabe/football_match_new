@@ -24,6 +24,7 @@ Route::group(['prefix' => 'user'], function() {
     Route::get('mypage', 'User\HomeController@mypage');
     Route::get('mypage/apply_create', 'User\HomeController@apply_create');
     Route::post('mypage/apply_create', 'User\HomeController@submission');
+    Route::get('mypage/list', 'User\HomeController@list');
 
     //■代表者チーム
     Route::get('team/regist', 'User\TeamController@regist');

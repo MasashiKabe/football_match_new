@@ -25,7 +25,7 @@ class MatchingController extends Controller
 
     public function true_cancel(Request $request)
     {
-        redirect('user/matching/list');
+        return redirect('user/matching/list');
     }
 
     public function search_apply()
@@ -50,6 +50,6 @@ class MatchingController extends Controller
 
     public function apply_now(Request $request)
     {
-        redirect('user/matching/list');
+        return redirect('user/matching/list');
     }
 }
