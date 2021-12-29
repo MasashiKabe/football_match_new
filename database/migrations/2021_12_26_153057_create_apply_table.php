@@ -15,9 +15,10 @@ class CreateApplyTable extends Migration
     {
         Schema::create('apply', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->datetime('approval_at');
+            $table->date('approval_at');
+            $table->time('time_at');
             $table->string('prefecture');
-            $table->string('area');
+            $table->string('areas');
             $table->string('address');
             $table->string('url');
             $table->text('note');

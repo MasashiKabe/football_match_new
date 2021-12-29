@@ -10,8 +10,9 @@ class Apply extends Model
 
     public static $rules = array(
         'approval_at' => 'required',
+        'time_at' => 'required',
         'prefecture' => 'required',
-        'area' => 'required',
+        'areas' => 'required',
         'address' => 'required',
         'note' => 'required',
     );

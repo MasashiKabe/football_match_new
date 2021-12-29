@@ -16,9 +16,9 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="image">チーム写真</label>
+                        <label class="col-md-2" for="picture">チーム写真</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="picture">
                         </div>
                     </div>
                     <div class="form-group row">

@@ -16,13 +16,13 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="date">募集日</label>
+                        <label class="col-md-2" for="approval_at">募集日</label>
                         <div class="col-md-10">
-                            <input type="date" name="date">
+                            <input type="date" name="approval_at">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="time">時間帯</label>
+                        <label class="col-md-2" for="time_at">時間帯</label>
                         <div class="col-md-10">
                             <input type="time" name="time1">～<input type="time" name="time2">
                         </div>
@@ -83,9 +83,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="area">エリア・会場</label>
+                        <label class="col-md-2" for="areas">エリア・会場</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="area">
+                            <input type="text" class="form-control" name="areas">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -101,9 +101,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="comment">コメント</label>
+                        <label class="col-md-2" for="note">コメント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="comment" cols="20" rows="10"></textarea>
+                            <textarea class="form-control" name="note" cols="20" rows="10"></textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}

@@ -9,7 +9,7 @@ use App\Teams;
 
 class TeamController extends Controller
 {
-    //「代表者新規登録」代表者チーム新規登録、チーム編集
+    //「代表者新規登録」代表者チーム新規登録、登録したチームを画面に表示、そこからチーム編集、
     public function regist()
     {
         return view('user.team.regist');
@@ -36,6 +36,13 @@ class TeamController extends Controller
         $teams->save();
 
         return redirect('user/mypage');
+    }
+
+    public function index(Request $request)
+    {
+        $posts = Teams::all();
+
+        return view('user.home.mypage',['posts' => $posts]);
     }
 
     public function edit()

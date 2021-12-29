@@ -95,7 +95,7 @@ return [
     'numeric' => 'The :attribute must be a number.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => ':attribute に入力が必要です。',
+    'required' => ':attribute の入力は必須です。',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -153,7 +153,9 @@ return [
         'area' => '活動地域',
         'note' => 'コメント',
 
-        'approval_at' => '募集日・時間帯',
+        'approval_at' => '募集日',
+        'time_at' => '時間帯',
+        'areas' => 'エリア・会場',
         'address' => '住所'
     ],
 
