@@ -20,17 +20,17 @@
                 <div class="form-group row">
                     <table class="table">
                         <tbody>
-                            @foreach($posts as $teams)
+                            @foreach($teams as $team)
                                 <tr>
-                                    <th>{{ $teams->id }}</th>
-                                    <td>{{ $teams->image }}</td>
-                                    <td>{{ $teams->nickname }}</td>
-                                    <td>{{ $teams->team_name }}</td>
-                                    <td>{{ $teams->age }}</td>
-                                    <td>{{ $teams->league }}</td>
-                                    <td>{{ $teams->prefecture }}</td>
-                                    <td>{{ $teams->area }}</td>
-                                    <td>{{ $teams->note }}</td>
+                                    <th>{{ $team->id }}</th>
+                                    <td>{{ $team->picture }}</td>
+                                    <td>{{ $team->nickname }}</td>
+                                    <td>{{ $team->team_name }}</td>
+                                    <td>{{ $team->age }}</td>
+                                    <td>{{ $team->league }}</td>
+                                    <td>{{ $prefectures[$team->prefecture] }}</td>
+                                    <td>{{ $team->area }}</td>
+                                    <td>{{ $team->note }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

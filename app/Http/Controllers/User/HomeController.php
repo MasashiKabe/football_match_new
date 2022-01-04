@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Apply;
+use App\Recruitments;
 
 class HomeController extends Controller
 {
@@ -22,16 +22,18 @@ class HomeController extends Controller
 
     public function submission(Request $request)
     {
-        $this->validate($request, Apply::$rules);
+        $this->validate($request, Recruitments::$rules);
 
-        $apply = new Apply;
+        $recruitments = new Recruitments;
         $form = $request->all();
+
+        $form['team_id'] = $team['id'];
 
         unset($form['_token']);
         unset($form['image']);
 
-        $apply->fill($form);
-        $apply->save();
+        $recruitments->fill($form);
+        $recruitments->save();
 
         return redirect('user/mypage/list');
     }
