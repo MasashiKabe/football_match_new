@@ -5,7 +5,10 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Recruitments;
+use Illuminate\Support\Facades\Auth;
+use App\Team;
+use App\Recruitment;
+use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
 {
@@ -22,12 +25,16 @@ class HomeController extends Controller
 
     public function submission(Request $request)
     {
-        $this->validate($request, Recruitments::$rules);
+        $this->validate($request, Recruitment::$rules);
 
-        $recruitments = new Recruitments;
+        $recruitments = new Recruitment;
         $form = $request->all();
 
+        $user = Auth::user();
+        $team = Team::where('user_id', $user->id)->first();
         $form['team_id'] = $team['id'];
+        $form['start_at'] = date('Y-m-d H:i', strtotime($form['start_at']));
+        $form['end_at'] = date('Y-m-d H:i', strtotime($form['end_at']));
 
         unset($form['_token']);
         unset($form['image']);
@@ -40,7 +47,17 @@ class HomeController extends Controller
 
     public function list()
     {
-        return view('user.home.list');
+        Carbon::setLocale('ja');
+
+        $user = Auth::user();
+        $team = Team::where('user_id', $user->id)->first();
+        $recruitments = Recruitment::where('team_id', $team->id)->get();
+
+        return view('user.home.list', [
+            'user' => $user,
+            'team' => $team,
+            'recruitments' => $recruitments,
+        ]);
     }
 
 }

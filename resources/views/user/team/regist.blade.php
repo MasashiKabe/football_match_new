@@ -24,25 +24,25 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="nickname">代表者ニックネーム</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="nickname">
+                            <input type="text" class="form-control" name="nickname" value="{{ old('nickname') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="team_name">チーム名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="team_name">
+                            <input type="text" class="form-control" name="team_name" value="{{ old('team_name') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="age">メンバー年代</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="age">
+                            <input type="text" class="form-control" name="age" value="{{ old('age') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="league">加盟リーグ</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="league">
+                            <input type="text" class="form-control" name="league" value="{{ old('league') }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -58,13 +58,13 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="area">活動地域</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="area">
+                            <input type="text" class="form-control" name="area" value="{{ old('area') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="note">コメント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="note" cols="20" rows="10"></textarea>
+                            <textarea class="form-control" name="note" cols="20" rows="10">{{ old('note') }}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}

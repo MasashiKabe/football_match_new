@@ -16,15 +16,21 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="recruitment_start">試合開始日時</label>
+                        <label class="col-md-2" for="start_at">試合開始日時</label>
                         <div class="col-md-10">
-                            <input type="datetime-local" name="recruitment_start">
+                            <input type="datetime-local" name="start_at" value="{{ old('start_at') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="recruitment_close">終了日時</label>
+                        <label class="col-md-2" for="end_at">終了日時</label>
                         <div class="col-md-10">
-                            <input type="datetime-local" name="recruitment_close">
+                            <input type="datetime-local" name="end_at" value="{{ old('end_at') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="close_at">募集締切日</label>
+                        <div class="col-md-10">
+                            <input type="date" name="close_at" value="{{ old('close_at') }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -40,13 +46,13 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="areas">エリア・会場</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="areas">
+                            <input type="text" class="form-control" name="areas" value="{{ old('areas') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="address">住所</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="address">
+                            <input type="text" class="form-control" name="address" value="{{ old('address') }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -58,7 +64,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="note">コメント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="note" cols="20" rows="10"></textarea>
+                            <textarea class="form-control" name="note" cols="20" rows="10">{{ old('note') }}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}

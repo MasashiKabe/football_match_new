@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
-use App\Teams;
+use App\Team;
 
 class TeamController extends Controller
 {
@@ -16,7 +16,7 @@ class TeamController extends Controller
         $prefectures = config('prefectures');
         
         $user = Auth::user();
-        $teams = Teams::where('user_id', $user->id)->get();
+        $teams = Team::where('user_id', $user->id)->get();
 
         return view('user.home.mypage',[
             'teams' => $teams,
@@ -31,9 +31,9 @@ class TeamController extends Controller
 
     public function register(Request $request)
     {
-        $this->validate($request, Teams::$rules);
+        $this->validate($request, Team::$rules);
 
-        $teams = new Teams;
+        $teams = new Team;
         $form = $request->all();
 
         $user = Auth::user();

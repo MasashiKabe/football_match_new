@@ -8,6 +8,15 @@
             <div class="col-md-4 mx-auto">
                 <h1>私から依頼した試合</h1>
                 <div class="form-group row">
+                    @foreach($applys as $apply)
+                    <table class="table">
+                        <td>
+                          {{ $apply->recruitments->start_at }}
+                          -
+                          {{ $apply->recruitments->end_at }}
+                        </td>
+                    </table>
+                    @endforeach
                     <table class="table">
                         <td>xx月xx日(x)xx:xx～xx:xx</td><td>承認待ち</td>
                     </table>

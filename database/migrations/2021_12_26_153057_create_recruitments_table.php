@@ -16,8 +16,9 @@ class CreateRecruitmentsTable extends Migration
         Schema::create('recruitments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('team_id');
-            $table->datetime('recruitment_start');
-            $table->datetime('recruitment_close');
+            $table->datetime('start_at');
+            $table->datetime('end_at');
+            $table->datetime('close_at');
             $table->string('prefecture');
             $table->string('areas');
             $table->string('address');

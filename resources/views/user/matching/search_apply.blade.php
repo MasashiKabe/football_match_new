@@ -15,29 +15,33 @@
                 </div>
                 <h1>応募投稿</h1>
                 <div class="form-group row">
+                    @foreach($recruitments as $recruitment)
                     <table class="table">
-                        <td>Aチーム</td><td>xx月xx日(x)xx:xx～xx:xx　神奈川県　募集中！！</td>
+                        <td>
+                          {{ $recruitment->start_at }}
+                          -
+                          {{ $recruitment->end_at }}
+                        </td>
+                        <td>
+                          {{ $recruitment->team->team_name }}
+                        </td>
+                        <td>
+                          {{ $recruitment->areas }}
+                        </td>
+                        <td>
+                          @if (strtotime($recruitment->closed_at) < now()) 募集中 @endif
+                        </td>
+                        <td>
+                            <form action="{{ url('user/matching/apply') }}" method="post">
+                            @csrf
+                            <input type="text" name="note">
+                            <input type="submit" class="btn btn-primary" value="応募する">
+                            <input type="hidden" name="recruitment_id" value="{{ $recruitment->id }}">
+                            <input type="hidden" name="team_id" value="{{ $team->id }}">
+                            </form>
+                        </td>
                     </table>
-                    <form action="" method="get">
-                        <input type="submit" class="btn btn-primary" value="応募詳細へ">
-                    </form>
-                </div>
-                <div>
-                <div class="form-group row">
-                    <table class="table">
-                        <td>Bチーム</td><td>xx月xx日(x)xx:xx～xx:xx　千葉県　募集中です。</td>
-                    </table>
-                    <form action="" method="get">
-                        <input type="submit" class="btn btn-primary" value="応募詳細へ">
-                    </form>
-                </div>
-                <div class="form-group row">
-                    <table class="table">
-                        <td>Cチーム</td><td>xx月xx日(x)xx:xx～xx:xx　静岡県　募集中しています。</td>
-                    </table>
-                    <form action="" method="get">
-                        <input type="submit" class="btn btn-primary" value="応募詳細へ">
-                    </form>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -153,8 +153,9 @@ return [
         'area' => '活動地域',
         'note' => 'コメント',
 
-        'recruitment_start' => '試合開始日時',
-        'recruitment_close' => '終了日時',
+        'start_at' => '試合開始日時',
+        'end_at' => '終了日時',
+        'close_at' => '募集締切日',
         'areas' => 'エリア・会場',
         'address' => '住所'
     ],

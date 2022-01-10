@@ -18,7 +18,7 @@ Route::get('/list', 'HomeController@list');
 Route::get('/detail', 'HomeController@detail');
 
 //■代表者用
-Route::group(['prefix' => 'user'], function() {  
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function() {  
 
     //■代表者ホーム
     Route::get('mypage', 'User\HomeController@mypage');

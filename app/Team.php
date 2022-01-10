@@ -4,16 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Recruitments extends Model
+class Team extends Model
 {
     protected $guarded = array('id');
 
     public static $rules = array(
-        'recruitment_start' => 'required',
-        'recruitment_close' => 'required',
+        'nickname' => 'required',
+        'team_name' => 'required',
+        'age' => 'required',
         'prefecture' => 'required',
-        'areas' => 'required',
-        'address' => 'required',
+        'area' => 'required',
         'note' => 'required',
     );
 }

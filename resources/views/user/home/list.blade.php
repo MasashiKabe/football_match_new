@@ -8,36 +8,29 @@
             <div class="col-md-8 mx-auto">
                 <h1>応募投稿一覧</h1>
                 <div class="form-group row">
+                    @foreach($recruitments as $recruitment)
                     <table class="table">
-                        <td>xx月xx日(x)xx:xx～xx:xx</td><td>募集中</td>
+                        <td>
+                            <a href="" class="btn btn-outline-primary">編集</a>
+                        </td>
+                        <td>
+                            {{ $recruitment->start_at }}
+                            ～
+                            {{ $recruitment->end_at }}
+                        </td>
+                        <td>
+                            {{ $recruitment->areas }}
+                        </td>
+                        <td>
+                            {{ $recruitment->note }}
+                        </td>
+                        <td>
+                            @if (strtotime($recruitment->closed_at) < now())
+                            募集中
+                            @endif
+                        </td>
                     </table>
-                    <form action="" method="get">
-                        <input type="submit" class="btn btn-primary" value="詳細へ">
-                    </form>
-                </div>
-                <div class="form-group row">
-                    <table class="table">
-                        <td>xx月xx日(x)xx:xx～xx:xx</td><td>承認済み</td>
-                    </table>
-                    <form action="" method="get">
-                        <input type="submit" class="btn btn-primary" value="詳細へ">
-                    </form>
-                </div>
-                <div class="form-group row">
-                    <table class="table">
-                        <td>xx月xx日(x)xx:xx～xx:xx</td><td>承認済み</td>
-                    </table>
-                    <form action="" method="get">
-                        <input type="submit" class="btn btn-primary" value="詳細へ">
-                    </form>
-                </div>
-                <div class="form-group row">
-                    <table class="table">
-                        <td>xx月xx日(x)xx:xx～xx:xx</td><td>期限切れ</td>
-                    </table>
-                    <form action="" method="get">
-                        <input type="submit" class="btn btn-primary" value="詳細へ">
-                    </form>
+                    @endforeach
                 </div>
             </div>
         </div>
